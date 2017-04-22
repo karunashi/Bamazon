@@ -39,9 +39,9 @@ inquirer.prompt([{
 	type: "list",
 	choices: idList,
 	message: "Please pick what item you would like to buy based on the product's designated identification number."
-}]).then(function(test12) {
-	console.log('\x1b[33m'+"You've chosen ID# "+'\x1b[0m'+test12.promptConsumer)
-	itemChoice = test12.promptConsumer
+}]).then(function(Customer) {
+	console.log('\x1b[33m'+"You've chosen ID# "+'\x1b[0m'+Customer.promptConsumer)
+	itemChoice = Customer.promptConsumer
 	promptCount()
 });
 }
