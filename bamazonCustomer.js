@@ -5,6 +5,7 @@ var prodList = [];
 var initialList = false;
 var itemChoice = "";
 var itemAmount = 0;
+var newTotal = 0;
 var connection = mysql.createConnection({
 	host: "localhost",
 	port: 3306,
@@ -60,15 +61,31 @@ function promptCount(){
 		checkStock();
 	});
 ;}
-
 function checkStock() {
-connection.query('SELECT * FROM products', function(err, res){
+connection.query("SELECT * FROM products", function(err, res){
  if(err) throw err;
  for (var i = 0; i < res.length; i++) {
 	if (itemChoice == res[i].id && res[i].stock_quantity > itemAmount) {
-		var newTotal = res[i].stock_quantity - itemAmount;
+		newTotal = res[i].stock_quantity - itemAmount;
+		var cost = itemAmount * res[i].price;
+		console.log("The total transaction totals out to: $"+cost)
 		console.log("There are over "+newTotal+" left in stock for today!")
+		calculateStock()
+	}
+	else if (itemChoice == res[i].id && res[i].stock_quantity < itemAmount){
+		console.log("We cannot meet the amount of "+res[itemChoice].product_name+" for today. Please come back tomorrow for an update.")
 	}
  } 
 });
 }
+
+function calculateStock() {
+	connection.query("UPDATE products SET ? WHERE ?", 
+		[{stock_quantity: newTotal}, {id: itemChoice}], function(err, res) {
+			console.log("Item transaction complete!");
+			console.log("===========================");
+			console.log("Thank you and please come again!")
+		});
+}
+
+
