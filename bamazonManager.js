@@ -47,10 +47,10 @@ connection.query('SELECT * FROM products', function(err, res){
 		})
 	}
 	// else if (manager.promptManager == opt[2]) {
-
+ 		// Add inquirer x 2, make sure it validates so it doesn't give any issues (type: input), use said values to UPDATE similar to bamazonCustomer.js's calculateStock() function.
 	// }
 	// else if (manager.promptManager == opt[3]) {
-
+		// Inquirer with Insert to add new content into the table.
 	// }
 });
 }
