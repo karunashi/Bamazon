@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-var opt = ["View Products for Sale", "View Low Inventory", "Add to Inventory", "Add New Product"]
+var opt = ["View Products for Sale", "View Low Inventory", "Add to Inventory [TBD]", "Add New Product [TBD]"]
 var connection = mysql.createConnection({
 	host: "localhost",
 	port: 3306,
