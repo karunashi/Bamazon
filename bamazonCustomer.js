@@ -3,6 +3,8 @@ var inquirer = require("inquirer")
 var idList = [];
 var prodList = [];
 var initialList = false;
+var itemChoice = "";
+var itemAmount = 0;
 var connection = mysql.createConnection({
 	host: "localhost",
 	port: 3306,
@@ -38,6 +40,7 @@ inquirer.prompt([{
 	message: "Please pick what item you would like to buy based on the product's designated identification number."
 }]).then(function(test12) {
 	console.log('\x1b[33m'+"You've chosen ID# "+'\x1b[0m'+test12.promptConsumer)
+	itemChoice = test12.promptConsumer
 	promptCount()
 });
 }
@@ -53,9 +56,19 @@ function promptCount(){
 		}
 	}]).then(function(amountBuy) {
 		console.log("You've selected "+amountBuy.countItem+" in quantity for purchase.")
+		itemAmount = amountBuy.countItem
+		checkStock();
 	});
 ;}
 
 function checkStock() {
-	
+connection.query('SELECT * FROM products', function(err, res){
+ if(err) throw err;
+ for (var i = 0; i < res.length; i++) {
+	if (itemChoice == res[i].id && res[i].stock_quantity > itemAmount) {
+		var newTotal = res[i].stock_quantity - itemAmount;
+		console.log("There are over "+newTotal+" left in stock for today!")
+	}
+ } 
+});
 }
