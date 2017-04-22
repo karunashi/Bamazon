@@ -24,7 +24,6 @@ inquirer.prompt([{
 }]).then(function(manager) {
 	console.log('\x1b[33m'+"You've chosen "+'\x1b[0m'+manager.promptManager)
 	if (manager.promptManager == opt[0]) {
-console.log("Test")
 connection.query('SELECT * FROM products', function(err, res){
  if(err) throw err;
  console.log('\x1b[1m \x1b[31m'+"ID"+'\x1b[0m' + '\x1b[5m'+"||"+'\x1b[0m' + '\x1b[36m'+ "Product"+'\x1b[0m' + '\x1b[5m'+"||"+'\x1b[0m' + '\x1b[33m'+"Department"+'\x1b[0m'+ '\x1b[5m'+"||"+'\x1b[0m' + '\x1b[35m'+"Price (USD)"+'\x1b[0m'+ '\x1b[5m'+"||"+'\x1b[0m' + '\x1b[34m'+"Quantity"+'\x1b[0m')
