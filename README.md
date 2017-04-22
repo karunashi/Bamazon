@@ -29,7 +29,7 @@ Much like my previous two-three applications, this application also utilizes CLI
 - JavaScript - For functionality for the game.
 
 ## Screenshots
-![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/images/CustomerView-1.png)
-![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/images/ManagerView-2.png)
-![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/images/ManagerView-3.png)
-![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/images/MySQL-View-1.png)
+![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/Images/CustomerView-1.png)
+![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/Images/ManagerView-2.png)
+![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/Images/ManagerView-3.png)
+![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/Images/MySQL-View-1.png)
