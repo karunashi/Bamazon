@@ -27,3 +27,9 @@ Much like my previous two-three applications, this application also utilizes CLI
 - Node.JS for inquirer/MySQL NPM and JSON package management for CLI.
 - CLI - Git Bash and Terminal for playtesting main.js
 - JavaScript - For functionality for the game.
+
+## Screenshots
+![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/images/CustomerView-1.png)
+![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/images/ManagerView-2.png)
+![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/images/ManagerView-3.png)
+![alt tag](https://raw.githubusercontent.com/karunashi/Bamazon/master/images/MySQL-View-1.png)
